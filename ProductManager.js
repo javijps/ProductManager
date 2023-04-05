@@ -48,22 +48,13 @@ class ProductManager {
             console.log(`No se encontro producto con el id ingresado al el sistema!`);
             return;
         }
+
+        product.id = locatedProduct.id;
         
-        const updatedProduct = {
-
-            id : locatedProduct.id,
-            title: product.title,
-            description: product.description,
-            price: product.price,
-            thumbnail: product.thumbnail,
-            code: product.code,
-            stock: product.stock
-
-        }
-
         let index = this._products.indexOf(locatedProduct);
 
-        this._products[index] = updatedProduct;
+        this._products.splice(index,1);
+        this._products.push(product);
 
         this.writeFile(this._products);
 
@@ -109,26 +100,25 @@ class ProductManager {
         }
     }
 
-    writeFile(productsArray){
+    async writeFile(productsArray){
 
         try {  
-
-            fs.writeFileSync(this._path, JSON.stringify(productsArray));
+            await fs.promises.writeFile(this._path, JSON.stringify(productsArray));
 
         } catch (error) {
             console.log(error);
         }
     }
 
-    readFile(){
+    async readFile(){
 
         try {
-            const contenido = fs.readFileSync(this._path, 'utf-8');
+            const contenido = await fs.promises.readFile(this._path, 'utf-8');
             if(!contenido){
                 return;
             }
-            const jsonArray = JSON.parse(contenido);
-            this._products = jsonArray;
+
+            this._products = JSON.parse(contenido);
 
         } catch (error) {
             console.log(error);            
