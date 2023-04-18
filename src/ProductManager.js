@@ -1,6 +1,6 @@
-const { error } = require("console");
-const fs = require("fs");
-const { json } = require("stream/consumers");
+//const { error } = require("console");
+import fs from "fs";
+import json from "stream/consumers";
 
 class ProductManager {
 
@@ -14,11 +14,20 @@ class ProductManager {
     addProduct(product){
 
         product.id = this._products.length + 1;
+        product.status = true;
 
-        if(!product.title || !product.description || !product.price || !product.thumbnail || !product.code || !product.stock){
+        if(!product.title || 
+           !product.description || 
+           !product.price || 
+           !product.code || 
+           !product.stock ||
+           !product.category){
             
             console.log(`El producto debe contar con todas las propiedades para ser agregado!`);
-            return;
+            return false;
+        }
+        if(!product.thumbnails){
+            product.thumbnails = [];
         }
 
         let locatedCode = this._products.find(e => e.code === product.code);
@@ -26,7 +35,7 @@ class ProductManager {
         if(locatedCode){
     
             console.log(`Producto con el codigo ${product.code} ya esta registrado en el sistema!`);
-            return;
+            return false;
         }
         
         this._products.push(product);
@@ -34,6 +43,8 @@ class ProductManager {
         this.writeFile(this._products);
 
         console.log(`Producto con el codigo ${product.code} agregado con exito al sistema!`);
+
+        return true;
     }
 
     updateProduct(id,product){
@@ -44,7 +55,7 @@ class ProductManager {
         if(!locatedProduct){
 
             console.log(`No se encontro producto con el id ingresado al el sistema!`);
-            return;
+            return false;
         }
 
         product.id = locatedProduct.id;
@@ -57,11 +68,12 @@ class ProductManager {
         this.writeFile(this._products);
 
         console.log(`Producto actualizado en el sistema!`);
-
+        return true;
     }
 
     deleteProduct(id){
 
+        let idPrueba = this.getProductById(id);
 
         const productIndex = this._products.findIndex(e => e.id === id);
 
@@ -69,10 +81,12 @@ class ProductManager {
             this._products.splice(productIndex,1);
         } else {
             console.log("Id no encontrado!")
+            return false;
         }
 
         this.writeFile(this._products);
 
+        return true;
     }
 
     getProducts(){
@@ -120,4 +134,4 @@ class ProductManager {
 
 }
 
-module.exports = ProductManager;
+export default ProductManager;

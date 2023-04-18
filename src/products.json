@@ -1,110 +1,101 @@
 [
     {
-        "title":"Fideos",
-        "description":"Fideos",
-        "price":100,
-        "thumbnail":"sin imagen",
-        "code":"fds",
-        "stock":100,
-        "id": 1        
+        "title": "Fideos",
+        "description": "Fideos",
+        "price": 100,
+        "thumbnail": "sin imagen",
+        "code": "fds",
+        "stock": 100,
+        "id": 1
     },
     {
-        "title":"Ravioles",
-        "description":"ravioles",
-        "price":300,
-        "thumbnail":"sin imagen",
-        "code":"rvl1234",
-        "stock":1000,
-        "id": 2   
+        "title": "Ravioles",
+        "description": "ravioles",
+        "price": 300,
+        "thumbnail": "sin imagen",
+        "code": "rvl1234",
+        "stock": 1000,
+        "id": 2
     },
     {
-        "title":"Caseritos",
-        "description":"raviolones",
-        "price":500,
-        "thumbnail":"sin imagen",
-        "code":"csr1234",
-        "stock":1000,
-        "id":3        
+        "title": "Caseritos",
+        "description": "raviolones",
+        "price": 500,
+        "thumbnail": "sin imagen",
+        "code": "csr1234",
+        "stock": 1000,
+        "id": 3
     },
     {
-        "title":"Fusiles",
-        "description":"Fideos fusiles",
-        "price":350,
-        "thumbnail":"sin imagen",
-        "code":"fsl",
-        "stock":1234,
-        "id":4        
+        "title": "Fusiles",
+        "description": "Fideos fusiles",
+        "price": 350,
+        "thumbnail": "sin imagen",
+        "code": "fsl",
+        "stock": 1234,
+        "id": 4
     },
     {
-        "title":"Capelettis",
-        "description":"Capelettis",
-        "price":350,
-        "thumbnail":"sin imagen",
-        "code":"cpl1234",
-        "stock":145,
-        "id":5        
+        "title": "Capelettis",
+        "description": "Capelettis",
+        "price": 350,
+        "thumbnail": "sin imagen",
+        "code": "cpl1234",
+        "stock": 145,
+        "id": 5
     },
     {
-        "title":"Pizza",
-        "description":"Prepizza",
-        "price":300,
-        "thumbnail":"sin imagen",
-        "code":"pzz1234",
-        "stock":150,
-        "id":6        
+        "title": "Pizza",
+        "description": "Prepizza",
+        "price": 300,
+        "thumbnail": "sin imagen",
+        "code": "pzz1234",
+        "stock": 150,
+        "id": 6
     },
     {
-        "title":"Empanada de carne",
-        "description":"Empanada de carne",
-        "price":500,
-        "thumbnail":"sin imagen",
-        "code":"empc1234",
-        "stock":150,
-        "id":7        
+        "title": "Empanada de carne",
+        "description": "Empanada de carne",
+        "price": 500,
+        "thumbnail": "sin imagen",
+        "code": "empc1234",
+        "stock": 150,
+        "id": 7
     },
     {
-        "title":"Canelon de verdura",
-        "description":"Canelon de verdura",
-        "price":180,
-        "thumbnail":"sin imagen",
-        "code":"cnlv1234",
-        "stock":100,
-        "id":8        
+        "title": "Canelon de verdura",
+        "description": "Canelon de verdura",
+        "price": 180,
+        "thumbnail": "sin imagen",
+        "code": "cnlv1234",
+        "stock": 100,
+        "id": 8
     },
     {
-        "title":"Canelon de ricota",
-        "description":"Canelon de ricota",
-        "price":180,
-        "thumbnail":"sin imagen",
-        "code":"cnlr",
-        "stock":100,
-        "id":9        
+        "title": "Canelon de ricota",
+        "description": "Canelon de ricota",
+        "price": 180,
+        "thumbnail": "sin imagen",
+        "code": "cnlr",
+        "stock": 100,
+        "id": 9
     },
     {
-        "title":"Canelon de jamon",
-        "description":"Canelon de jamon",
-        "price":180,
-        "thumbnail":"sin imagen",
-        "code":"cnljyq",
-        "stock":100,
-        "id":10        
+        "title": "Canelon de jamon",
+        "description": "Canelon de jamon",
+        "price": 180,
+        "thumbnail": "sin imagen",
+        "code": "cnljyq",
+        "stock": 100,
+        "id": 10
     },
     {
-        "title":"Sorrentinos de ricota",
-        "description":"Sorrentinos de ricota",
-        "price":1000,
-        "thumbnail":"sin imagen",
-        "code":"srrnric1234",
-        "stock":100,
-        "id":11        
-    },
-    {
-        "title":"producto prueba",
-        "description":"este es un producto prueba",
-        "price":200,
-        "thumbnail":"sin imagen",
-        "code":"abc123",
-        "stock":25,
-        "id":12        
-    }   
+        "title": "Sorrentinos de ricota",
+        "description": "Sorrentinos de ricota",
+        "price": 1000,
+        "thumbnail": "sin imagen",
+        "code": "srrnric1234",
+        "stock": 100,
+        "id": 11
+    }
 ]

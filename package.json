@@ -1,10 +1,12 @@
 {
+  "type": "module",
   "name": "productmanager",
   "version": "1.0.0",
   "description": "",
-  "main": "ProductManager.js",
+  "main": "ProductManager",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/app.js"
   },
   "repository": {
     "type": "git",
