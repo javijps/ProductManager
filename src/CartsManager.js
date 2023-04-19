@@ -82,12 +82,13 @@ class CartsManager {
             return false;
         }
 
-        locatedCart.products.forEach(e => {
-            if(e.id === productId){
-                e.quantity++;
-                return;
+        for (let index = 0; index < locatedCart.products.length; index++) {
+            const element = locatedCart.products[index];
+            
+            if(element.id === productId){
+                element.quantity++;
             }
-        });
+        }
 
         let newProduct = {
             id: productId,

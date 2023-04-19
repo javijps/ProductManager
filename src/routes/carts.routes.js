@@ -12,6 +12,8 @@ router.post('/', async (req,res) => {
         res.status(200).send({success:"OK"});
 
     } catch (error) {
+
+        res.status(404).send({status:"error", error : 'Ocurrio un error.'});
         console.log(error);    
     }
 })
@@ -24,7 +26,7 @@ router.post('/:cid/product/:pid', async (req,res) => {
         let productId = parseInt(req.params.pid);
 
         if(!manager.addProductToCart(cartId,productId)){
-            return res.status(404).send('Carrito no encontrado');
+            return res.status(404).send({status:"error", error : 'Carrito no encontrado'});
         }
 
         res.status(200).send({success:"OK"});
@@ -43,7 +45,7 @@ router.get('/:cid', (req,res) => { ////REVISAR DESDE ACA
         let productos = manager.getProductsFromCart(cartId);
 
         if(!productos){
-            return res.status(404).send('Carrito no encontrado');
+            return res.status(404).send({status:"error", error : 'Carrito no encontrado'});
         }
     
         res.json({productos});

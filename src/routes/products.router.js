@@ -18,7 +18,8 @@ router.get('/', async (req, res) => {
         res.send({productos});
 
     } catch (error) {
-        console.log(error);    
+        res.status(404).send({status:"error", error : 'Ocurrio un error.'});
+        console.log(error); 
     }
 
 });
@@ -32,7 +33,7 @@ router.get('/:pid', async (req, res) => {
         const product = productos.find(producto => producto.id === productId);
 
         if(!product){
-            return res.status(404).send('Producto no encontrado');
+            return res.status(404).send({status:"error", error : 'Producto no encontrado'});
         }
         
         res.send(product);   
@@ -51,7 +52,7 @@ router.post('/', async (req,res) => {
 
         if(!manager.addProduct(productoParaAgregar)) {
 
-            res.status(404).send({status:"error", error : "No fue posible agregar el producto. Revisar datos."});
+            return res.status(404).send({status:"error", error : "No fue posible agregar el producto. Revisar datos."});
         
         }
 
@@ -65,13 +66,12 @@ router.post('/', async (req,res) => {
 router.put('/:pid',async (req, res) => {
     
     try {
-        //ARMAR UN OBJETO PRODUCTO
         const idProductoParaActualizar = parseInt(req.params.pid);
         const productoParaActualizar = req.body;
 
         if(!manager.updateProduct(idProductoParaActualizar,productoParaActualizar)) {
 
-            res.status(404).send({status:"error", error : "No fue posible actualizar el producto. Revisar datos."});
+            return res.status(404).send({status:"error", error : "No fue posible actualizar el producto. Revisar datos."});
         
         }
 
@@ -86,12 +86,11 @@ router.put('/:pid',async (req, res) => {
 router.delete('/:pid',async (req, res) => {
     
     try {
-        //ARMAR UN OBJETO PRODUCTO
         const idProductoParaEliminar = parseInt(req.params.pid);
 
         if(!manager.deleteProduct(idProductoParaEliminar)) {
 
-            res.status(404).send({status:"error", error : "No fue posible eliminar el producto. Revisar datos."});
+            return res.status(404).send({status:"error", error : "No fue posible eliminar el producto. Revisar datos."});
         
         }
 
